@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Football Team Manager</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div>
+          <h1 id="teamName">Uzbekiston</h1>
+
+          <p class="formation-text">3-4-2-1 Formation • Max 11 players</p>
+        </div>
+
+        <div class="header-buttons">
+          <button class="btn secondary-btn" onclick="openTeamModal()">
+            Edit Team
+          </button>
+
+          <button class="btn primary-btn" onclick="openAddPlayerModal()">
+            Add Player
+          </button>
+        </div>
+      </header>
+
+      <!-- FIELD -->
+
+      <section class="field">
+        <!-- ST -->
+
+        <div class="position" id="st"></div>
+
+        <!-- AM -->
+
+        <div class="row am-row">
+          <div class="position" id="am-left"></div>
+
+          <div class="position" id="am-right"></div>
+        </div>
+
+        <!-- CM -->
+
+        <div class="row cm-row">
+          <div class="position" id="cm-left"></div>
+
+          <div class="position" id="cm-center-left"></div>
+
+          <div class="position" id="cm-center-right"></div>
+
+          <div class="position" id="cm-right"></div>
+        </div>
+
+        <!-- CB -->
+
+        <div class="row cb-row">
+          <div class="position" id="cb-left"></div>
+
+          <div class="position" id="cb-center"></div>
+
+          <div class="position" id="cb-right"></div>
+        </div>
+
+        <!-- GK -->
+
+        <div class="position" id="gk"></div>
+
+        <!-- FIELD LINES -->
+
+        <div class="center-line"></div>
+
+        <div class="center-circle"></div>
+
+        <div class="small-circle"></div>
+
+        <div class="goal-top"></div>
+
+        <div class="goal-bottom"></div>
+      </section>
+    </div>
+
+    <!-- PLAYER MODAL -->
+
+    <div id="playerModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 id="modalTitle">Add Player</h2>
+
+          <button class="close-btn" onclick="closePlayerModal()">✕</button>
+        </div>
+
+        <div class="form-group">
+          <label>Name</label>
+
+          <input id="playerName" type="text" />
+        </div>
+
+        <div class="form-group">
+          <label>Jersey Number</label>
+
+          <input id="playerNumber" type="number" />
+        </div>
+
+        <div class="form-group">
+          <label>Position</label>
+
+          <select id="playerPosition">
+            <option value="st">Striker</option>
+
+            <option value="am-left">AM Left</option>
+
+            <option value="am-right">AM Right</option>
+
+            <option value="cm-left">CM Left</option>
+
+            <option value="cm-center-left">CM Center Left</option>
+
+            <option value="cm-center-right">CM Center Right</option>
+
+            <option value="cm-right">CM Right</option>
+
+            <option value="cb-left">CB Left</option>
+
+            <option value="cb-center">CB Center</option>
+
+            <option value="cb-right">CB Right</option>
+
+            <option value="gk">Goalkeeper</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label> Avatar URL </label>
+
+          <input id="playerAvatar" type="text" />
+        </div>
+
+        <div class="form-group">
+          <label> Club Logo URL </label>
+
+          <input id="playerClub" type="text" />
+        </div>
+
+        <div class="modal-buttons">
+          <button id="deleteBtn" class="delete-btn" onclick="deletePlayer()">
+            Delete
+          </button>
+
+          <button class="cancel-btn" onclick="closePlayerModal()">
+            Cancel
+          </button>
+
+          <button class="save-btn" onclick="savePlayer()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="teamModal" class="modal">
+      <div class="team-modal">
+        <h2>Edit Team</h2>
+
+        <input id="teamInput" type="text" />
+
+        <div class="team-buttons">
+          <button class="cancel-btn" onclick="closeTeamModal()">Cancel</button>
+
+          <button class="save-btn" onclick="saveTeamName()">Save</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
