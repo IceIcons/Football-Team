@@ -170,10 +170,6 @@ body {
   position: relative;
 }
 
-.position:hover {
-  transform: scale(1.05);
-}
-
 .position.empty {
   border: 3px dashed rgba(255, 255, 255, 0.45);
   border-radius: 20px;
