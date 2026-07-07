@@ -1,29 +1,16 @@
-// ===========================
-// LOCAL STORAGE
-// ===========================
-
-const STORAGE_KEY = "footballTeam";
-
 let team = {
   id: "1",
   name: "Uzbekiston",
   players: [],
 };
 
+const STORAGE_KEY = "footballTeam";
 let selectedPlayerId = null;
 let selectedPosition = "";
-
-// ===========================
-// LOAD
-// ===========================
 
 loadData();
 renderTeamName();
 renderField();
-
-// ===========================
-// FUNCTIONS
-// ===========================
 
 function loadData() {
   let data = localStorage.getItem(STORAGE_KEY);
@@ -40,7 +27,7 @@ function saveData() {
 }
 
 function renderTeamName() {
-  document.getElementById("teamName").innerText = team.name;
+  document.getElementById("teamName").innerHTML = team.name;
 }
 
 function renderField() {
@@ -117,16 +104,12 @@ function renderField() {
   });
 }
 
-// ===========================
-// MODAL
-// ===========================
-
 function openAddPlayerModal(position = "") {
   selectedPlayerId = null;
 
   selectedPosition = position;
 
-  document.getElementById("modalTitle").innerText = "Add Player";
+  document.getElementById("modalTitle").innerHTML = "Add Player";
 
   document.getElementById("playerName").value = "";
 
@@ -147,9 +130,6 @@ function openAddPlayerModal(position = "") {
 function closePlayerModal() {
   document.getElementById("playerModal").style.display = "none";
 }
-// ===========================
-// EDIT PLAYER
-// ===========================
 
 function editPlayer(id) {
   selectedPlayerId = id;
@@ -176,10 +156,6 @@ function editPlayer(id) {
 
   document.getElementById("playerModal").style.display = "flex";
 }
-
-// ===========================
-// SAVE PLAYER
-// ===========================
 
 function savePlayer() {
   let name = document.getElementById("playerName").value.trim();
@@ -246,9 +222,6 @@ function savePlayer() {
 
   closePlayerModal();
 }
-// ===========================
-// DELETE PLAYER
-// ===========================
 
 function deletePlayer() {
   if (selectedPlayerId == null) {
@@ -271,10 +244,6 @@ function deletePlayer() {
 
   closePlayerModal();
 }
-
-// ===========================
-// TEAM NAME
-// ===========================
 
 function openTeamModal() {
   document.getElementById("teamInput").value = team.name;
@@ -304,10 +273,6 @@ function saveTeamName() {
   closeTeamModal();
 }
 
-// ===========================
-// CLOSE MODAL
-// ===========================
-
 window.onclick = function (event) {
   let playerModal = document.getElementById("playerModal");
 
@@ -321,10 +286,6 @@ window.onclick = function (event) {
     closeTeamModal();
   }
 };
-
-// ===========================
-// ONCLICK FUNCTIONS
-// ===========================
 
 window.openAddPlayerModal = openAddPlayerModal;
 
