@@ -286,19 +286,3 @@ window.onclick = function (event) {
     closeTeamModal();
   }
 };
-
-window.openAddPlayerModal = openAddPlayerModal;
-
-window.closePlayerModal = closePlayerModal;
-
-window.savePlayer = savePlayer;
-
-window.editPlayer = editPlayer;
-
-window.deletePlayer = deletePlayer;
-
-window.openTeamModal = openTeamModal;
-
-window.closeTeamModal = closeTeamModal;
-
-window.saveTeamName = saveTeamName;
